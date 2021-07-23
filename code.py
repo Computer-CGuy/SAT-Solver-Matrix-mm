@@ -1,5 +1,7 @@
 import torch
 
+# Example taken from first few lines of https://people.sc.fsu.edu/~jburkardt/data/cnf/aim-50-1_6-yes1-4.cnf
+## Main source: https://people.sc.fsu.edu/~jburkardt/data/cnf/cnf.htm
 # a b d 0
 # -b c d 0
 # -b -c d 0
@@ -35,6 +37,7 @@ print(getRanges(2))
 print(getRanges(3))
 print(getRanges(4))
 # quit()
+
 for a in getRanges(0):
 	for b in getRanges(1):
 		for c in getRanges(2):
