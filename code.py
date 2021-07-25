@@ -42,6 +42,15 @@ C = torch.Tensor(C)
 # print(getRanges(3))
 # print(getRanges(4))
 # quit()
+def calcVal(mat):
+	cnt = 0
+	for x in mat:
+		if(x==0.0 or x==1.0):
+			continue
+		cnt+=max(0-x,1-x)
+	return int(cnt)
+def DiffRet(a,b):
+	return torch.sum((b-a))
 def printMe(a,b,c,d):
 	C = [[a],[b],[c],[d]]
 	C = torch.Tensor(C)
@@ -51,16 +60,11 @@ def printMe(a,b,c,d):
 	# if(not is_decimal(ret)):
 	print(a,b,c,d)
 	print(ret)
+	print("Val",calcVal(ret))
+	return ret
+	# print(list(x for x in ret))
 	# print(is_decimal(ret))
-printMe(1,1,1,1)
-printMe(1,1,1,2)
-printMe(1,1,1,3)
-printMe(1,1,1,4)
-printMe(1,1,1,5)
-# for a in getRanges(0):
-# 	for b in getRanges(1):
-# 		for c in getRanges(2):
-# 			for d in getRanges(3):
-# 				for e in getRanges(4):
-# 					print(a,b,c,d,e)
-					
+ret2 = printMe(1,1,1,1)
+ret3 = printMe(1,2,1,1)
+ret3 = printMe(1,3,1,1)
+print(DiffRet(ret2,ret3))
