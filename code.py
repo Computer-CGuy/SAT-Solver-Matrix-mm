@@ -30,26 +30,32 @@ A = torch.Tensor(A)
 # B = torch.Tensor(B)
 C = torch.Tensor(C)
 
-vals = range(1,3)
-print(getRanges(0))
-print(getRanges(1))
-print(getRanges(2))
-print(getRanges(3))
-print(getRanges(4))
+# vals = range(1,3)
+# print(getRanges(0))
+# print(getRanges(1))
+# print(getRanges(2))
+# print(getRanges(3))
+# print(getRanges(4))
 # quit()
+def printMe(a,b,c,d,e):
+	C = [[a],[b],[c],[d],[e]]
+	C = torch.Tensor(C)
+	# print(torch.mm(B,A))
+	# print(torch.inverse(A))
+	ret = (torch.mm(torch.inverse(A),C))
+	# if(not is_decimal(ret)):
+	print(a,b,c,d,e)
+	print(ret)
+	print(is_decimal(ret))
+printMe(1,1,1,1,1)
+printMe(1,1,1,2,1)
+printMe(1,1,2,1,1)
+printMe(1,1,3,1,1)
 
-for a in getRanges(0):
-	for b in getRanges(1):
-		for c in getRanges(2):
-			for d in getRanges(3):
-				for e in getRanges(4):
-					print(a,b,c,d,e)
-					C = [[a],[b],[c],[d],[e]]
-					C = torch.Tensor(C)
-					# print(torch.mm(B,A))
-					# print(torch.inverse(A))
-					ret = (torch.mm(torch.inverse(A),C))
-					if(not is_decimal(ret)):
-						print(a,b,c,d,e)
-						print(ret)
-						print(is_decimal(ret))
+# for a in getRanges(0):
+# 	for b in getRanges(1):
+# 		for c in getRanges(2):
+# 			for d in getRanges(3):
+# 				for e in getRanges(4):
+# 					print(a,b,c,d,e)
+					
