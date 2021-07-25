@@ -16,7 +16,7 @@ A = [[1,1,0,1,0],
 	 [0,0,0,-1,1],
 	 [0,0,0,0,1]]
 A = [[1,0,0,0],
-	 [0,1,0,0],
+	 [1,1,0,0],
 	 [0,0,1,0],
 	 [1,1,1,1]]
 # B = [[1],[1],[1]]
@@ -51,10 +51,12 @@ def printMe(a,b,c,d):
 	# if(not is_decimal(ret)):
 	print(a,b,c,d)
 	print(ret)
-	print(is_decimal(ret))
+	# print(is_decimal(ret))
 printMe(1,1,1,1)
 printMe(1,1,1,2)
 printMe(1,1,1,3)
+printMe(1,1,1,4)
+printMe(1,1,1,5)
 # for a in getRanges(0):
 # 	for b in getRanges(1):
 # 		for c in getRanges(2):
