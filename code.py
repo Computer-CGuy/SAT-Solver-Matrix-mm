@@ -15,18 +15,23 @@ A = [[1,1,0,1,0],
 	 [0,-1,-1,1,2],
 	 [0,0,0,-1,1],
 	 [0,0,0,0,1]]
+A = [[1,0,0,0],
+	 [0,1,0,0],
+	 [0,0,1,0],
+	 [1,1,1,1]]
 # B = [[1],[1],[1]]
 def is_decimal(tensor):
 	if(torch.all(tensor.long()==tensor)):
 		return False
 	else:
 		return True
+A = torch.Tensor(A)
 
-C = [[1],[1],[1],[1],[1]]
+# C = [[1],[1],[1],[1],[1]]
+C = [[1]]*A.shape[0]
 def getRanges(row):
 	global A
 	return range(1,torch.sum(A[row]!=0)+1)
-A = torch.Tensor(A)
 # B = torch.Tensor(B)
 C = torch.Tensor(C)
 
@@ -37,21 +42,19 @@ C = torch.Tensor(C)
 # print(getRanges(3))
 # print(getRanges(4))
 # quit()
-def printMe(a,b,c,d,e):
-	C = [[a],[b],[c],[d],[e]]
+def printMe(a,b,c,d):
+	C = [[a],[b],[c],[d]]
 	C = torch.Tensor(C)
 	# print(torch.mm(B,A))
 	# print(torch.inverse(A))
 	ret = (torch.mm(torch.inverse(A),C))
 	# if(not is_decimal(ret)):
-	print(a,b,c,d,e)
+	print(a,b,c,d)
 	print(ret)
 	print(is_decimal(ret))
-printMe(1,1,1,1,1)
-printMe(1,1,1,2,1)
-printMe(1,1,2,1,1)
-printMe(1,1,3,1,1)
-
+printMe(1,1,1,1)
+printMe(1,1,1,2)
+printMe(1,1,1,3)
 # for a in getRanges(0):
 # 	for b in getRanges(1):
 # 		for c in getRanges(2):
