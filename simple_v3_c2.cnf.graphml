@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<graph id="CNF" edgedefault="undirected">
+<key id="n_variable_name" for="node" attr.name="variable_name" attr.type="string"/>
+<key id="n_variable_index" for="node" attr.name="variable_index" attr.type="int"/>
+<key id="n_variable_id" for="node" attr.name="variable_id" attr.type="int"/>
+<key id="n_label" for="node" attr.name="label" attr.type="string"/>
+<node id="v1">
+<data key="n_variable_id">1</data>
+<data key="n_label">1</data>
+</node>
+<node id="v2">
+<data key="n_variable_id">2</data>
+<data key="n_label">2</data>
+</node>
+<edge source="v1" target="v3"/>
+<edge source="v1" target="v2"/>
+<edge source="v2" target="v3"/>
+</graph>
+</graphml>
