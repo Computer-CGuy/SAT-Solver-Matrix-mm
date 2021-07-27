@@ -21,13 +21,13 @@ def read_cnf_from_file(file_name):
             variables, clauses = int(variables),int(clauses)
             num_clauses = clauses
             # shape = max(variables,clauses)
-            
+            # print()
             # A = torch.zeros((variables+2,clauses))
             A = torch.zeros((clauses+1,variables+1))
             continue
         vals = listToInt(line.split(" "))[:-1]
         negs = 0
-        print(vals)
+        # print(vals)
         for x in vals:
             sgn_ = 1
             if(x==0): raise TypeError
@@ -44,18 +44,20 @@ def read_cnf_from_file(file_name):
     A[-1][-1] = 1
     return A
         
+def main():
+    # ret = read_cnf_from_file("test-nonceTVA.cnf")
+    ret = read_cnf_from_file("simple_v3_c2.cnf")
+    # ret = read_cnf_from_file("simple.cnf")
+    # ret = read_cnf_from_file("simple.cnf")
+    print(ret)
 
-# ret = read_cnf_from_file("aim-50-1_6-yes1-4.cnf")
-ret = read_cnf_from_file("simple_v3_c2.cnf")
-# ret = read_cnf_from_file("simple.cnf")
-# ret = read_cnf_from_file("simple.cnf")
-# print(ret)
+    C = 7*[[3]]+[[1]]
 
-C = 7*[[3]]+[[1]]
+    C = [[2],[2],[1],[2],[2],[1],[1],[1]]
+    C = (num_clauses)*[[3]]+[[1]]
+    print(ret)
+    ans = torch.mm(torch.pinverse(ret),torch.Tensor(C))
+    safePrint(ans)
+    # print()   
 
-C = [[2],[2],[1],[2],[2],[1],[1],[1]]
-C = (num_clauses)*[[1]]+[[1]]
-print(ret)
-ans = torch.mm(torch.pinverse(ret),torch.Tensor(C))
-safePrint(ans)
-# print()
+main()
