@@ -330,7 +330,7 @@ int main(int argc, void* argv[])
 	for(int i=0;i<18;i+=1){
 		input_block[i]=nondet_uint();
 	// input_block[1]=nondet_uint();
-	__CPROVER_assume(input_block[i]==(1+input_blocks[i]));
+	__CPROVER_assume(input_block[i]==(input_blocks[i]));
 	// __CPROVER_assume(input_block[0]==(2));
 	// __CPROVER_assume(input_block[1]==(4));
 	}
